@@ -11,6 +11,12 @@
         <span>加盟合作</span>
       </div>
 
+
+      <div class="q4">
+        <span>登录/注册</span>
+      </div>
+
+
       <div class="q3">
         <span>服务中心</span>
         <span>规则中心</span>
@@ -18,9 +24,7 @@
       </div>
 
 
-      <div class="q4">
-        <span>登录/注册</span>
-      </div>
+
 
     </div>
   </div>
@@ -52,10 +56,10 @@
       }
   }
 
-  .q1, .q2 {
+  .q1, .q2{
     float: left;
   }
-  .q3, .q4{float: right}
+  .q3,.q4{float: right}
 
   .q1 span {
     font-size: 43px;
@@ -84,5 +88,10 @@
 
   .q2 span.active, .q3 span.active, .q4 span.active {
     background: #1e6ab8;
+  }
+
+  @media (max-width: 960px){
+    .q2 span:last-child{display: none}
+    .q3 span:last-child{display: none}
   }
 </style>

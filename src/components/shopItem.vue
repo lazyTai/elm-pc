@@ -66,6 +66,11 @@
   }
 
   }
+  @media (max-width: 960px){
+    .shopitem {
+      width: calc(1 / 3 * 100)%;
+    }
+  }
 </style>
 
 <template>
