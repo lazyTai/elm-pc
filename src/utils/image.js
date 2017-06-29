@@ -27,16 +27,21 @@ ProxyImage.prototype.init = function () {
 }
 
 var ImageFatory = function (dom) {
-  var _image = new CacheImage(dom);
-  var _hander = function () {
-    if (document.documentElement.clientHeight + document.body.scrollTop > dom.offsetTop) {
+  var _image = null;
+  var _hander = null;
+  _image = new CacheImage(dom);
+  if (document.documentElement.clientHeight + document.body.scrollTop < $(dom).offset().top) {
+    _hander = function () {
       _image = new ProxyImage(_image);
       _image.init()
       document.removeEventListener('scroll', _hander)
     }
+  } else {
+    _image = new ProxyImage(_image);
+    _image.init()
   }
   return function () {
-    document.addEventListener('scroll', _hander)
+    document.addEventListener('scroll', _hander);
     return _image;
   }
 }
